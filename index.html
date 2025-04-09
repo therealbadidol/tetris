@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Tetris</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Classic Tetris</h1>
+        </div>
+        
+        <div class="game-area">
+            <div class="game-info">
+                <div class="next-piece-container">
+                    <h2>Next</h2>
+                    <canvas id="next-piece" width="120" height="120"></canvas>
+                </div>
+                
+                <div class="score-container">
+                    <h2>Score</h2>
+                    <div id="score">0</div>
+                </div>
+                
+                <div class="level-container">
+                    <h2>Level</h2>
+                    <div id="level">1</div>
+                </div>
+                
+                <div class="lines-container">
+                    <h2>Lines</h2>
+                    <div id="lines">0</div>
+                </div>
+                
+                <div class="controls">
+                    <h2>Controls</h2>
+                    <p>← → : Move</p>
+                    <p>↑ : Rotate</p>
+                    <p>↓ : Soft Drop</p>
+                    <p>Space : Hard Drop</p>
+                    <p>P : Pause</p>
+                </div>
+                
+                <div class="music-control">
+                    <button id="music-toggle">
+                        <i class="fas fa-volume-up" id="sound-icon"></i> 
+                        <span id="sound-status">Music On</span>
+                    </button>
+                    <audio id="background-music" loop>
+                        <source src="Tetris (Korobeiniki).mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+                <button id="start-button">Start Game</button>
+                <button id="restart-button" class="hidden">Restart Game</button>
+            </div>
+            
+            <div class="game-board">
+                <canvas id="tetris" width="300" height="600"></canvas>
+                <div id="pause-screen" class="overlay hidden">
+                    <div class="overlay-content">
+                        <h2>Game Paused</h2>
+                        <p>Press 'P' to continue</p>
+                    </div>
+                </div>
+                <div id="game-over" class="overlay hidden">
+                    <div class="overlay-content">
+                        <h2>Game Over</h2>
+                        <p>Your score: <span id="final-score">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="tetris.js"></script>
+</body>
+</html>
